@@ -212,13 +212,13 @@ export default function SeniorsHousingPage() {
           </div>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: '📊', title: 'Market Intelligence', desc: 'Pricing trends, cap rates, and deal flow across Ontario seniors housing.' },
-              { icon: '🏢', title: 'Deal Activity', desc: 'Our team\'s transactions, new listings, and off-market opportunities.' },
-              { icon: '💡', title: 'Strategic Insights', desc: 'Thesis-driven analysis on where the market is headed and why it matters.' },
-              { icon: '📋', title: 'Operator & Lender Updates', desc: 'Who\'s buying, who\'s lending, and what terms look like today.' },
+              { icon: (<svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>), title: 'Market Intelligence', desc: 'Pricing trends, cap rates, and deal flow across Ontario seniors housing.' },
+              { icon: (<svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3H21m-3.75 3H21" /></svg>), title: 'Deal Activity', desc: 'Our team\'s transactions, new listings, and off-market opportunities.' },
+              { icon: (<svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" /></svg>), title: 'Strategic Insights', desc: 'Thesis-driven analysis on where the market is headed and why it matters.' },
+              { icon: (<svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>), title: 'Operator & Lender Updates', desc: 'Who\'s buying, who\'s lending, and what terms look like today.' },
             ].map((item, i) => (
               <div key={i} className="text-center p-6">
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="w-12 h-12 bg-[#002B5C]/5 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#002B5C]">{item.icon}</div>
                 <h3 className="font-semibold text-gray-900 mb-2 text-sm">{item.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
@@ -239,7 +239,7 @@ export default function SeniorsHousingPage() {
               <div className="w-24 h-24 bg-[#002B5C] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">DI</div>
               <h3 className="text-lg font-bold text-gray-900">Dayma Itamunoala</h3>
               <p className="text-sm text-[#002B5C] font-medium mb-1">Senior Vice President, Sales Representative</p>
-              <p className="text-xs text-gray-400 mb-4">Ontario Multifamily & Seniors Housing</p>
+              <p className="text-xs text-gray-400 mb-4">Ontario Multifamily Team</p>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Over $1.1B in career transaction volume across multifamily, seniors housing, and student housing. Advising institutional and private capital on acquisition, disposition, and recapitalization strategies across Ontario.
               </p>
@@ -251,7 +251,7 @@ export default function SeniorsHousingPage() {
               <div className="w-24 h-24 bg-[#002B5C] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">AR</div>
               <h3 className="text-lg font-bold text-gray-900">Aman Rana</h3>
               <p className="text-sm text-[#002B5C] font-medium mb-1">Associate Vice President</p>
-              <p className="text-xs text-gray-400 mb-4">Seniors Housing & Credit</p>
+              <p className="text-xs text-gray-400 mb-4">Ontario Multifamily Team</p>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 A decade in real estate credit, most recently as Associate Director of Credit at Timbercreek. Experience underwriting complex transactions across Canada and the U.S. brings a lender&apos;s lens to an asset class where structure matters as much as pricing.
               </p>
@@ -337,6 +337,7 @@ export default function SeniorsHousingPage() {
             </div>
             <div className="text-blue-400 text-xs text-center md:text-right">
               <p>181 Bay Street, Suite 1400, Toronto ON M5J 2T3</p>
+              <p className="mt-1">647-915-3193</p>
             </div>
           </div>
         </div>
