@@ -41,15 +41,14 @@ export default function SeniorsHousingPage() {
           <div className="hidden md:flex items-center gap-8 text-sm">
             <a href="https://onmultifamily.com" className="text-blue-200 hover:text-white transition-colors">Multifamily</a>
             <span className="text-white font-medium border-b-2 border-blue-300 pb-0.5">Seniors Housing</span>
-            <a href="mailto:dayma.itamunoala@colliers.com" className="text-blue-200 hover:text-white transition-colors">Contact</a>
+            <a href="#subscribe" className="text-blue-200 hover:text-white transition-colors">Subscribe</a>
           </div>
         </div>
       </nav>
 
-      {/* Hero */}
+      {/* Hero — email signup is the main event */}
       <section className="relative bg-[#002B5C] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#001A3A] via-[#002B5C] to-[#003D7A]" />
-        {/* Subtle pattern overlay */}
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
@@ -59,21 +58,42 @@ export default function SeniorsHousingPage() {
               New Vertical Launch
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Seniors Housing<br />
-              <span className="text-blue-300">Capital Markets</span>
+              Ontario Seniors<br />
+              <span className="text-blue-300">Housing Advisory</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl">
-              Dedicated advisory for owners and investors in seniors housing and retirement living across Ontario. Market intelligence, capital markets insight, and strategic guidance — whether you&apos;re evaluating options, planning a disposition, or underwriting an acquisition.
+              Dedicated advisory for owners and investors in seniors housing and retirement living across Ontario. Market intelligence, transaction insight, and strategic guidance — whether you&apos;re evaluating options, planning a disposition, or underwriting an acquisition.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href="#subscribe" className="inline-flex items-center justify-center gap-2 bg-white text-[#002B5C] font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-sm">
-                Join the Distribution List
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </a>
-              <a href="mailto:aman.rana@colliers.com" className="inline-flex items-center justify-center gap-2 border border-white/30 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-sm">
-                Speak With Our Team
-              </a>
-            </div>
+
+            {/* Inline email signup — primary CTA */}
+            {submitted ? (
+              <div className="inline-flex items-center gap-3 bg-emerald-500/20 backdrop-blur-sm rounded-xl px-6 py-4 border border-emerald-400/30">
+                <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                <span className="text-white font-medium">You&apos;re on the list — welcome.</span>
+              </div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="max-w-lg">
+                <div className="flex gap-3">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    required
+                    className="flex-1 px-5 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-blue-300 outline-none focus:ring-2 focus:ring-blue-300/50 focus:border-blue-300 text-sm"
+                  />
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="px-8 py-4 bg-white text-[#002B5C] font-semibold rounded-lg hover:bg-blue-50 transition-colors text-sm disabled:opacity-70 whitespace-nowrap"
+                  >
+                    {submitting ? 'Joining...' : 'Get Updates'}
+                  </button>
+                </div>
+                {error && <p className="text-red-300 text-sm mt-2">{error}</p>}
+                <p className="text-xs text-blue-300/60 mt-3">Market insights, new listings, deal activity, and off-market intelligence. Unsubscribe anytime.</p>
+              </form>
+            )}
           </div>
         </div>
       </section>
@@ -183,15 +203,39 @@ export default function SeniorsHousingPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* What you get */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What You&apos;ll Get</h2>
+            <p className="text-lg text-gray-500">Straight to your inbox — no noise, just signal.</p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { icon: '📊', title: 'Market Intelligence', desc: 'Pricing trends, cap rates, and deal flow across Ontario seniors housing.' },
+              { icon: '🏢', title: 'Deal Activity', desc: 'Our team\'s transactions, new listings, and off-market opportunities.' },
+              { icon: '💡', title: 'Strategic Insights', desc: 'Thesis-driven analysis on where the market is headed and why it matters.' },
+              { icon: '📋', title: 'Operator & Lender Updates', desc: 'Who\'s buying, who\'s lending, and what terms look like today.' },
+            ].map((item, i) => (
+              <div key={i} className="text-center p-6">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm">{item.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">Our Team</h2>
-          <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">Deep capital markets expertise with a specialized focus on seniors housing and retirement living across Ontario.</p>
+          <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">Deep transactional expertise with a specialized focus on seniors housing and retirement living across Ontario.</p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Dayma */}
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 text-center">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 text-center">
               <div className="w-24 h-24 bg-[#002B5C] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">DI</div>
               <h3 className="text-lg font-bold text-gray-900">Dayma Itamunoala</h3>
               <p className="text-sm text-[#002B5C] font-medium mb-1">Senior Vice President, Sales Representative</p>
@@ -199,20 +243,17 @@ export default function SeniorsHousingPage() {
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Over $1.1B in career transaction volume across multifamily, seniors housing, and student housing. Advising institutional and private capital on acquisition, disposition, and recapitalization strategies across Ontario.
               </p>
-              <div className="flex flex-col gap-1 text-sm text-gray-500">
-                <a href="mailto:dayma.itamunoala@colliers.com" className="hover:text-[#002B5C] transition-colors">dayma.itamunoala@colliers.com</a>
-                <a href="https://onmultifamily.com" className="hover:text-[#002B5C] transition-colors">onmultifamily.com</a>
-              </div>
+              <a href="mailto:dayma.itamunoala@colliers.com" className="text-sm text-gray-500 hover:text-[#002B5C] transition-colors">dayma.itamunoala@colliers.com</a>
             </div>
 
             {/* Aman */}
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 text-center">
+            <div className="bg-white rounded-2xl p-8 border border-gray-200 text-center">
               <div className="w-24 h-24 bg-[#002B5C] rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">AR</div>
               <h3 className="text-lg font-bold text-gray-900">Aman Rana</h3>
-              <p className="text-sm text-[#002B5C] font-medium mb-1">Associate, Seniors Housing</p>
-              <p className="text-xs text-gray-400 mb-4">Capital Markets & Credit</p>
+              <p className="text-sm text-[#002B5C] font-medium mb-1">Associate Vice President</p>
+              <p className="text-xs text-gray-400 mb-4">Seniors Housing & Credit</p>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                A decade in real estate credit, most recently as Associate Director of Credit at Timbercreek. Experience underwriting complex transactions across Canada and the U.S. brings a capital markets lens to an asset class where structure matters as much as pricing.
+                A decade in real estate credit, most recently as Associate Director of Credit at Timbercreek. Experience underwriting complex transactions across Canada and the U.S. brings a lender&apos;s lens to an asset class where structure matters as much as pricing.
               </p>
               <div className="flex flex-col gap-1 text-sm text-gray-500">
                 <a href="mailto:aman.rana@colliers.com" className="hover:text-[#002B5C] transition-colors">aman.rana@colliers.com</a>
@@ -223,12 +264,12 @@ export default function SeniorsHousingPage() {
         </div>
       </section>
 
-      {/* Subscribe CTA */}
+      {/* Subscribe CTA — second placement */}
       <section id="subscribe" className="py-16 md:py-24 bg-[#002B5C]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Seniors Housing Intelligence</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay Ahead of the Market</h2>
           <p className="text-blue-200 text-lg mb-8 max-w-xl mx-auto">
-            Join our distribution list for dedicated seniors housing and retirement living updates — market data, pricing trends, new listings, off-market opportunities, and lender activity.
+            Get our seniors housing insights delivered straight to your inbox — deal activity, market data, off-market opportunities, and strategic analysis.
           </p>
 
           {submitted ? (
@@ -253,12 +294,13 @@ export default function SeniorsHousingPage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-8 py-4 bg-white text-[#002B5C] font-semibold rounded-lg hover:bg-blue-50 transition-colors text-sm disabled:opacity-70"
+                  className="px-8 py-4 bg-white text-[#002B5C] font-semibold rounded-lg hover:bg-blue-50 transition-colors text-sm disabled:opacity-70 whitespace-nowrap"
                 >
-                  {submitting ? 'Joining...' : 'Subscribe'}
+                  {submitting ? 'Joining...' : 'Get Updates'}
                 </button>
               </div>
-              <p className="text-xs text-blue-300/60 mt-3">Market data, new listings, and off-market intelligence. Unsubscribe anytime.</p>
+              {error && <p className="text-red-300 text-sm mt-2">{error}</p>}
+              <p className="text-xs text-blue-300/60 mt-3">No spam. Unsubscribe anytime.</p>
             </form>
           )}
         </div>
@@ -291,11 +333,10 @@ export default function SeniorsHousingPage() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
               <div className="text-white font-bold text-lg">COLLIERS</div>
-              <div className="text-blue-300 text-xs">Ontario Multifamily & Seniors Housing Capital Markets</div>
+              <div className="text-blue-300 text-xs">Ontario Multifamily & Seniors Housing</div>
             </div>
             <div className="text-blue-400 text-xs text-center md:text-right">
               <p>181 Bay Street, Suite 1400, Toronto ON M5J 2T3</p>
-              <p className="mt-1">© {new Date().getFullYear()} Colliers International. All rights reserved.</p>
             </div>
           </div>
         </div>
