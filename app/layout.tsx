@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Seniors Housing Capital Markets | Colliers Ontario Multifamily",
-  description: "Expert advisory for seniors housing and retirement living investment sales across Ontario. Data-driven insight, capital markets expertise, and strategic guidance.",
+  description: "Dedicated advisory for owners and investors in seniors housing and retirement living across Ontario. Market data, pricing trends, and strategic guidance from Colliers.",
   openGraph: {
     title: "Seniors Housing Capital Markets | Colliers",
     description: "Expert advisory for seniors housing investment sales across Ontario.",

@@ -53,7 +53,7 @@ export default function SeniorsHousingPage() {
               <span className="text-blue-300">Capital Markets</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl">
-              Expert advisory for seniors housing and retirement living investment sales across Ontario. Data-driven insight. Capital markets expertise. Strategic guidance for every stage of the cycle.
+              Dedicated advisory for owners and investors in seniors housing and retirement living across Ontario. Market intelligence, capital markets insight, and strategic guidance — whether you&apos;re evaluating options, planning a disposition, or underwriting an acquisition.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#subscribe" className="inline-flex items-center justify-center gap-2 bg-white text-[#002B5C] font-semibold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors text-sm">
@@ -73,10 +73,10 @@ export default function SeniorsHousingPage() {
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: '90%+', label: 'Average Occupancy (2025)' },
-              { value: '40%', label: '75+ Population Growth (10yr)' },
-              { value: '3M', label: 'Ontarians Over 65' },
-              { value: '$1.1B+', label: 'Career Transaction Volume' },
+              { value: '$1.1B+', label: 'Multifamily, Seniors & Student Housing Sales' },
+              { value: '81%', label: 'Closing Rate on Listings Undertaken' },
+              { value: '3,000+', label: 'Units Sold Since 2018' },
+              { value: '40%', label: 'Projected 75+ Population Growth (10yr)' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
@@ -187,7 +187,7 @@ export default function SeniorsHousingPage() {
               <p className="text-sm text-[#002B5C] font-medium mb-1">Senior Vice President, Sales Representative</p>
               <p className="text-xs text-gray-400 mb-4">Ontario Multifamily & Seniors Housing</p>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                Over $1.1B in career multifamily transaction volume. Advising institutional and private capital on acquisition, disposition, and recapitalization strategies across Ontario.
+                Over $1.1B in career transaction volume across multifamily, seniors housing, and student housing. Advising institutional and private capital on acquisition, disposition, and recapitalization strategies across Ontario.
               </p>
               <div className="flex flex-col gap-1 text-sm text-gray-500">
                 <a href="mailto:dayma.itamunoala@colliers.com" className="hover:text-[#002B5C] transition-colors">dayma.itamunoala@colliers.com</a>
@@ -216,9 +216,9 @@ export default function SeniorsHousingPage() {
       {/* Subscribe CTA */}
       <section id="subscribe" className="py-16 md:py-24 bg-[#002B5C]">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay Informed</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Seniors Housing Intelligence</h2>
           <p className="text-blue-200 text-lg mb-8 max-w-xl mx-auto">
-            Receive dedicated seniors housing updates including market data, new listings, and off-market intelligence.
+            Join our distribution list for dedicated seniors housing and retirement living updates — market data, pricing trends, new listings, off-market opportunities, and lender activity.
           </p>
 
           {submitted ? (
