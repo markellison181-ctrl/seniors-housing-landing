@@ -337,8 +337,7 @@ export default function SeniorsHousingPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
-              <div className="text-white font-bold text-lg">COLLIERS</div>
-              <div className="text-blue-300 text-xs">Ontario Multifamily & Seniors Housing</div>
+              <div className="text-white font-bold text-lg">Colliers Multifamily Team</div>
             </div>
             <div className="text-blue-400 text-xs text-center md:text-right">
               <p>181 Bay Street, Suite 1400, Toronto ON M5J 2T3</p>
