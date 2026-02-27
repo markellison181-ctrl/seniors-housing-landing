@@ -53,13 +53,9 @@ export default function SeniorsHousingPage() {
         
         <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm text-blue-200 mb-6">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              New Vertical Launch
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Ontario Seniors<br />
-              <span className="text-blue-300">Housing Advisory</span>
+              <span style={{ color: '#fcb900' }}>Housing Advisory</span>
             </h1>
             <p className="text-lg md:text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl">
               Dedicated advisory for owners and investors in seniors housing and retirement living across Ontario. Market intelligence, transaction insight, and strategic guidance — whether you&apos;re evaluating options, planning a disposition, or underwriting an acquisition.
@@ -99,7 +95,7 @@ export default function SeniorsHousingPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#001A3A] border-t border-white/10">
+      <section className="bg-[#001A3A] border-t-2" style={{ borderColor: '#fcb900' }}>
         <div className="max-w-6xl mx-auto px-6 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -174,7 +170,7 @@ export default function SeniorsHousingPage() {
                   { title: 'Operations First, Real Estate Second', desc: 'Buyers are underwriting operations first. Expenses are being monitored and controlled. Post-COVID labour shortages are being alleviated.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="w-8 h-8 bg-[#002B5C] text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
+                    <div className="w-8 h-8 text-white rounded-lg flex items-center justify-center text-sm font-bold shrink-0 mt-0.5" style={{ backgroundColor: '#fcb900', color: '#002B5C' }}>
                       {i + 1}
                     </div>
                     <div>
@@ -193,7 +189,7 @@ export default function SeniorsHousingPage() {
               <div className="space-y-3">
                 {['Care level revenue modelling', 'Staffing & labour cost analysis', 'Service mix optimization', 'CMHC & conventional financing structures', 'Operator assessment & transition planning'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm">
-                    <svg className="w-5 h-5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <svg className="w-5 h-5 shrink-0" style={{ color: '#fcb900' }} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
@@ -218,7 +214,7 @@ export default function SeniorsHousingPage() {
               { icon: (<svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>), title: 'Operator & Lender Updates', desc: 'Who\'s buying, who\'s lending, and what terms look like today.' },
             ].map((item, i) => (
               <div key={i} className="text-center p-6">
-                <div className="w-12 h-12 bg-[#002B5C]/5 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#002B5C]">{item.icon}</div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(252,185,0,0.08)', color: '#002B5C' }}>{item.icon}</div>
                 <h3 className="font-semibold text-gray-900 mb-2 text-sm">{item.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
@@ -230,6 +226,7 @@ export default function SeniorsHousingPage() {
       {/* Team */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="w-12 h-0.5 mx-auto mb-6" style={{ backgroundColor: '#fcb900' }} />
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">Our Team</h2>
           <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">Deep transactional expertise with a specialized focus on seniors housing and retirement living across Ontario.</p>
 
@@ -270,6 +267,7 @@ export default function SeniorsHousingPage() {
       {/* Subscribe CTA — second placement */}
       <section id="subscribe" className="py-16 md:py-24 bg-[#002B5C]">
         <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="w-12 h-0.5 mx-auto mb-6" style={{ backgroundColor: '#fcb900' }} />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay Ahead of the Market</h2>
           <p className="text-blue-200 text-lg mb-8 max-w-xl mx-auto">
             Get our seniors housing insights delivered straight to your inbox — deal activity, market data, off-market opportunities, and strategic analysis.
